@@ -1,0 +1,12 @@
+php_value date.timezone Asia/Novosibirsk
+
+RewriteCond %{HTTP_HOST} .
+RewriteCond %{HTTP_HOST} !^resume\.zloradnij\.ru [NC]
+RewriteRule (.*) http://resume.zloradnij.ru/$1 [R=301,L]
+
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php
+
